@@ -1,0 +1,33 @@
+{
+  "name": "contact-keeper",
+  "version": "1.0.0",
+  "description": "Building out a contact manager app while learning MongoDB Atlus and its clusters, Express, Account Auth, and Postman with React.JS and Brad Traversy with his Udemy course",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darlinecochran714/contact-keeper.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/darlinecochran714/contact-keeper/issues"
+  },
+  "homepage": "https://github.com/darlinecochran714/contact-keeper#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "config": "^3.3.1",
+    "express": "^4.17.1",
+    "express-validator": "^6.6.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.0"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.4"
+  }
+}
