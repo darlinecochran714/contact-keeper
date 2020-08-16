@@ -4,8 +4,13 @@ const express = require('express');
 // initializing express in a variable called 'app
 const app = express();
 
-// as of now, when running a get request on our server, it'll send back a 'whats up'
+// as of now, when running a get request on our server, it'll send back a 'api test'
 app.get('/', (req, res) => res.json({msg: 'api test'}))
+
+// defining routes
+app.use('/api/users/', require('./routes/users'))
+app.use('/api/auth/', require('./routes/auth'))
+app.use('/api/contacts/', require('./routes/contacts'))
 
 // putting out port in our env file or port 5000
 const PORT = process.env.PORT || 5000;
