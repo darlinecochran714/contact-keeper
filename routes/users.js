@@ -10,8 +10,7 @@ const jwt = require('jsonwebtoken');
 const config = require('config')
 
 // using express validator to check the inputted data. this starts is up
-const { body, validationResult, check } = require('express-validator');
-
+const {  body, validationResult, check } = require('express-validator');
 
 // grabbing the User schema
 const User = require('../models/User')
@@ -22,7 +21,7 @@ const User = require('../models/User')
 // @access      public
 router.post('/', 
     [
-        check('name', 'PLease add name' ).not().isEmpty(),
+        check('name', 'Please add name' ).not().isEmpty(),
 
         check('email', 'Please include a valid email').isEmail(),
 
@@ -83,7 +82,7 @@ router.post('/',
                     res.json({ token })
             }
             
-            )
+            );
 
         } catch (err) {
             console.error(err.message)
