@@ -4,7 +4,10 @@
 
 const express = require('express');
 const router = express.Router();
-const bcrypt = require('bcryptjs')
+const bcrypt = require('bcryptjs');
+// bringing in json web tokens
+const jwt = require('jsonwebtoken');
+const config = require('config')
 
 // using express validator to check the inputted data. this starts is up
 const { body, validationResult, check } = require('express-validator');
@@ -62,7 +65,25 @@ router.post('/',
 
             await user.save();
 
-            res.send('user saved')
+            //object we're sending in the token
+            const payload = {
+                user: {
+                    id: user.id
+                }
+            }
+
+            //genertating the token
+            // set up the secret in the default.json file
+            jwt.sign(payload, config.get('jwtSecret'), {
+                expiresIn: 3600000000
+            }, 
+                // checking for errors
+                (err, token) => {
+                    if(err) throw err;
+                    res.json({ token })
+            }
+            
+            )
 
         } catch (err) {
             console.error(err.message)

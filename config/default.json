@@ -1,3 +1,4 @@
 {
-    "mongoURI": "mongodb+srv://arlinecochrand:Mickey51!@contactkeeper.mm4kl.mongodb.net/contactKeeper?retryWrites=true&w=majority"
+    "mongoURI": "mongodb+srv://arlinecochrand:Mickey51!@contactkeeper.mm4kl.mongodb.net/contactKeeper?retryWrites=true&w=majority",
+    "jwtSecret": "secret"
 }
