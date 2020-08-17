@@ -10,7 +10,7 @@ const jwt = require('jsonwebtoken');
 const config = require('config')
 
 // using express validator to check the inputted data. this starts is up
-const {  body, validationResult, check } = require('express-validator');
+const { validationResult, check } = require('express-validator');
 
 // grabbing the User schema
 const User = require('../models/User')

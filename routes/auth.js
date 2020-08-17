@@ -6,7 +6,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const config = require('config')
 const auth = require('../middleware/auth')
-const { body, check, validationResult } = require('express-validator');
+const { check, validationResult } = require('express-validator');
 const User = require('../models/User')
 
 // @route       GET api/auth
@@ -16,8 +16,6 @@ router.get('/', auth, async (req, res) => {
     try{
         // mongoose method
         // this makes sure the password does not get returned to us
-        // I took out an await before User becuase nodemon did not like it. 
-        // I'll put it back in after the video and try to fix it
         const user = await User.findById(req.user.id).select('-password');
         res.json(user)
     } catch (err) {
