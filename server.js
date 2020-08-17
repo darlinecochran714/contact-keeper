@@ -9,6 +9,9 @@ connectDB();
 // initializing express in a variable called 'app
 const app = express();
 
+// init middlewear
+app.use(express.json({ extended: false }))
+
 // as of now, when running a get request on our server, it'll send back a 'api test'
 app.get('/', (req, res) => res.json({msg: 'api test'}))
 
